@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto X-Devs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet"/>
+
+<style type="text/css">
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-image: url('fundo-base.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.cabecalho {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.cabecalho h1 {
+    color: #f1ecff;
+    font-size: 45px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.personagens-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+
+}
+
+.lista-personagens {
+    width: 330px;
+    height: 520px;
+    position: relative;
+}
+
+.btn-seta {
+    background-color: #ffffff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s   ease-in-out;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn-seta.btn-voltar {
+    transform: rotateY(180deg);
+}
+
+.btn-seta:hover {
+    background-color: #8351fe;
+}
+
+.cartao {
+    opacity: 0;
+    height: 100%;
+    position: absolute;
+    padding: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cartao.selecionado {
+    opacity: 1;
+    z-index: 1;
+}
+
+.cartao .imagem-personagem {
+    width: 100%;
+    max-height: 280px;
+}
+
+.cartao .nome {
+    background-color: rgba(179, 177, 185, 0.7);
+    padding: 8px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.cartao .descricao {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cartao .descricao .titulo {
+    background-color: #333333;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 12px;
+}
+
+.cartao .descricao .texto {
+    font-size: 14px;
+    padding: 12px;
+    text-align: justify;
+    max-height: 110px;
+    overflow-y: auto;
+}
+
+.cartao.fundo-1 {
+    background: url(fundo-1.jpg) no-repeat;
+}
+
+.cartao.fundo-2 {
+    background: url(fundo-2.jpg) no-repeat;
+}
+
+.cartao.fundo-3 {
+    background: url(fundo-3.jpg) no-repeat;
+}
+
+.cartao.fundo-4 {
+    background: url(fundo-4.jpg) no-repeat;
+}
+
+.cartao.fundo-5 {
+    background: url(fundo-5.jpg) no-repeat;
+}
+
+.cartao.fundo-6 {
+    background: url(fundo-6.jpg) no-repeat;
+}
+
+</style>
+
+<style type="text/css">
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <h1>X-Devs</h1>
+    </header>
+    <main class="personagens-slider">
+        <button class="btn-seta btn-voltar" id="btn-voltar">
+            <img src="seta.png" alt="Seta para voltar a imagem">
+        </button>
+
+        <ul class="lista-personagens">
+            <li class="cartao selecionado fundo-1">
+                <h2 class="nome">Seu Clope</h2>
+                <img class="imagem-personagem" src="seuclope.png" alt="Seu Clope">
+        
+                <div class="descricao">
+                    <h3 class="titulo">Descrição</h3>
+                    <p class="texto">
+                        Seu Clope é conhecido por sua firme convicção de que as novas linguagens de programação são apenas modismos passageiros e desnecessários, e ele se recusa a adotar qualquer uma delas, alegando que nada pode superar a robustez e a eficácia do COBOL para resolver problemas reais. Seu estilo de trabalho é metódico e preciso, e ele valoriza acima de tudo a estabilidade e a confiabilidade em seu código.</p>
+                </div>
+            </li>
+           
+             <li class="cartao fundo-2">
+                <h2 class="nome">Vamplena</h2>
+                <img class="imagem-personagem" src="vamplena.png" alt="Vamplena"/>
+        
+                <div class="descricao">
+                    <h3 class="titulo">Descrição</h3>
+                    <p class="texto">
+                        Apesar de seu objetivo nobre de se tornar sênior, ela luta com o dilema ético de seu poder, pois teme tornar-se dependente da expertise alheia em vez de desenvolver a sua própria. Sua jornada é marcada por um intenso desejo de autodesenvolvimento e pela busca de um equilíbrio entre aprender com os outros e cultivar seu
+                        próprio talento genuíno.</p>
+                </div>
+            </li>
+
+            <li class="cartao fundo-3">
+                <h2 class="nome">Jubiléia</h2>
+                <img class="imagem-personagem" src="jubileia.png" alt="Jubiléia">
+        
+                <div class="descricao">
+                    <h3 class="titulo">Descrição</h3>
+                    <p class="texto">
+                        Uma jovem desenvolvedora em treinamento, Jubiléia já se destaca por sua peculiaridade: uma aversão declarada a temas claros em ambientes de programação. Ela tem uma preferência intensa por temas escuros, que considera mais suaves e agradáveis para seus olhos, especialmente durante longas sessões de codificação à noite.</p>
+
+                </div>
+
+            </li>
+
+
+            <li class="cartao fundo-4">
+                <h2 class="nome">Tempestade Solar</h2>
+                <img class="imagem-personagem" src="tempestade-solar.png" alt="Tempestade Solar">
+        
+                <div class="descricao">
+                    <h3 class="titulo">Descrição</h3>
+                    <p class="texto">
+                        No universo dos desenvolvedores, Tempestade Solar é conhecida como uma das vilãs mais formidáveis. Ela tem o poder de gerar explosões solares massivas que perturbam as redes de comunicação, afetando a internet e todos os dispositivos conectados. Esses surtos solares causam caos no mundo digital, desestabilizando servidores, interrompendo conexões e causando perda de dados críticos.</p>
+
+                </div>
+
+            </li>
+
+            <li class="cartao fundo-5">
+                <h2 class="nome">Professor Cafeze</h2>
+                <img class="imagem-personagem" src="professor-cafeze.png" alt="Professor Cafeze">
+        
+                <div class="descricao">
+                    <h3 class="titulo">Descrição</h3>
+                    <p class="texto">
+                        Líder dos X-devs é um mentor para desenvolvedores iniciantes, guiando-os com sua mente excepcional e uma xícara de café sempre à mão. Ele possui habilidades telepáticas que lhe permitem transmitir conhecimento de programação diretamente para a mente dos novatos, acelerando sua aprendizagem.</p>
+
+                </div>
+
+            </li>
+
+            <li class="cartao fundo-6">
+                <h2 class="nome">Loggineto</h2>
+                <img class="imagem-personagem" src="loggineto.png" alt="Loggineto">
+        
+                <div class="descricao">
+                    <h3 class="titulo">Descrição</h3>
+                    <p class="texto">
+                        Ele possui a capacidade única de influenciar e redirecionar fluxos de dados apenas com a força de sua vontade, permitindo-lhe acessar e alterar informações de qualquer dispositivo conectado à rede. Seu domínio sobre a segurança digital o torna um adversário formidável para qualquer equipe de TI, pois ele pode causar falhas, acessar dados confidenciais e criar barreiras de segurança quase impenetráveis.</p>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+        <button class="btn-seta" id="btn-avancar">
+            <img src="seta.png" alt="Seta para avançar a imagem">
+        </button> 
+
+    </main>
+
+<script>
+
+    /*
+
+OBJETIVO 1 - quando clicamos na seta de avançar temos que mostrar o proximo cartao da lista
+- passo 1 - dar um jeito de pegar o elemento HTML da seta avancar
+- passo 2 - dar um jeito de identificar o clique do usuáriona seta avançar
+- passo 3 - fazer aparecer o próximo cartão da lista
+- passo 4 - buscar o cartão que esta selecionado e esconder
+
+OBJETIVO 2 - quando clicarmos na seta de voltar temos que mostrar o cartão anterior da lista
+- passo 1 - dar um jeito de pegar o elemento HTML da seta voltar
+- passo 2 - dar um jeito de identificar o clique do usuário na seta voltar
+- passo 3 - fazer aparecer o cartão anterior da lista
+- passo 4 - buscar o cartão que esta selecionado e esconder
+*/
+
+//OBJETIVO 1 - quando clicamos na seta de avançar temos que mostrar o proximo cartao da lista
+//- passo 1 - dar um jeito de pegar o elemento HTML da seta avancar
+const btnAvancar = document.getElementById("btn-avancar");
+
+//- passo 1 - dar um jeito de pegar o elemento HTML da seta voltar
+const btnVoltar = document.getElementById("btn-voltar");
+let cartaoAtual = 0;
+const cartoes = document.querySelectorAll(".cartao");
+
+
+//- passo 2 - dar um jeito de identificar o clique do usuáriona seta avançar
+btnAvancar.addEventListener("click", function (){
+
+    const ehUltimoCartao = cartaoAtual === cartoes.length - 1;
+    if(ehUltimoCartao) return;
+  
+
+    //- passo 4 - buscar o cartão que esta selecionado e esconder
+    esconderCartaoSelecionado();
+
+
+//- passo 3 - fazer aparecer o próximo cartão da lista, colocando a classe selecionado nele
+
+
+cartaoAtual++;
+cartoes[cartaoAtual].classList.add("selecionado");
+});
+
+
+//OBJETIVO 2 - quando clicarmos na seta de voltar temos que mostrar o cartão anterior da lista
+
+//- passo 2 - dar um jeito de identificar o clique do usuário na seta voltar
+btnVoltar.addEventListener("click", function (){
+
+    const ehPrimeiroCartao = cartaoAtual === 0;
+    if(ehPrimeiroCartao) return;
+
+    //- passo 4 - buscar o cartão que esta selecionado e esconder
+    const cartaoSelecionado = document.querySelector(".selecionado");
+    cartaoSelecionado.classList.remove("selecionado");
+
+    //- passo 3 - fazer aparecer o cartão anterior da lista
+    cartaoAtual--;
+    cartoes[cartaoAtual].classList.add("selecionado");
+
+});
+
+function esconderCartaoSelecionado() {
+    const cartaoSelecionado = document.querySelector(".selecionado");
+    cartaoSelecionado.classList.remove("selecionado");
+}
+
+</script>
+
+</body>
+</html>
